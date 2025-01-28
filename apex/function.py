@@ -4,12 +4,15 @@ from variable import Variable
 
 class Function:
     input: Variable
+    output: Variable
 
     def __call__(self, input: Variable):
         x = input.data
         y = self.forward(x)
         output = Variable(y)
+        output.set_creater(self)
         self.input = input
+        self.output = output
         return output
 
     def forward(self, x: np.ndarray):

@@ -16,3 +16,9 @@ def test_backward():
     a.grad = B.backward(b.grad)
     x.grad = A.backward(a.grad)
     print("x.grad:", x.grad)
+    assert y.creator == C
+    assert y.creator.input == b
+    assert y.creator.input.creator == B
+    assert y.creator.input.creator.input == a
+    assert y.creator.input.creator.input.creator == A
+    assert y.creator.input.creator.input.creator.input == x
