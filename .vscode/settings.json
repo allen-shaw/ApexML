@@ -2,10 +2,14 @@
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic", // 设置为 strict 模式
     "python.linting.mypyEnabled": true, // 启用 mypy 类型检查
-    "python.testing.pytestEnabled": true,
     "debugpy.showPythonInlineValues": true,
     "python.linting.enabled": true, // 启用 linting
     "python.linting.mypyArgs": [ // 可选参数
         "--basic" // 开启严格模式
-    ]
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestPath": "pytest", // 可根据需要指定 pytest 的路径
+    "python.envFile": "${workspaceFolder}/.env"
 }
